@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
-  mode:"jit",
+  mode: "jit",
   theme: {
     extend: {
       colors: {
@@ -14,16 +14,18 @@ module.exports = {
         "gradient-rainblue":
           "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
       }),
-      screens:{
+      content: {
+        brush: "url('/public/assets/images/brush.png')",
+      },
+      screens: {
         xs: "480px",
         ss: "620px",
         sm: "768px",
         md: "1060px",
         lg: "1200px",
         xl: "1700px",
-      }
+      },
     },
   },
   plugins: [],
-}
-
+};

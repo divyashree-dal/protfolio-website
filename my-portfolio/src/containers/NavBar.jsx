@@ -63,6 +63,14 @@ function NavBar({ scrolled, selectedPage, setSelectedPage }) {
 
                 <div>
                   <Link
+                    page="About"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                </div>
+
+                <div>
+                  <Link
                     page="Skills"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
@@ -126,6 +134,14 @@ function NavBar({ scrolled, selectedPage, setSelectedPage }) {
                 <div>
                   <Link
                     page="Home"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                </div>
+
+                <div>
+                  <Link
+                    page="About"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />

@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import UseMediaQuery from "./hooks/UseMediaQuery";
-import NavBar from "./components/NavBar";
-import DotScrollGroup from "./components/DotScrollGroup";
-import Homebanner from "./components/Homebanner";
+import NavBar from "./containers/NavBar";
+import DotScrollGroup from "./containers/DotScrollGroup";
+import Homebanner from "./containers/Homebanner";
 import { motion } from "framer-motion";
+import AboutMe from "./containers/AboutMe";
+import SectionLine from "./commoncomponents/SectionLine";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -50,6 +52,17 @@ function App() {
           >
             <Homebanner setSelectedPage={setSelectedPage}> </Homebanner>
           </motion.div>
+
+          <SectionLine />
+
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("about")}
+          >
+            <AboutMe setSelectedPage={setSelectedPage}> </AboutMe>
+          </motion.div>
+          <SectionLine />
         </div>
       </div>
     </>

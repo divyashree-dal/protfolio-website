@@ -2,7 +2,7 @@ import React from "react";
 import UseMediaQuery from "../hooks/UseMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
-import SocialMediaIIcons from "./SocialMediaIIcons";
+import SocialMediaIIcons from "../commoncomponents/SocialMediaIIcons";
 
 
 function Homebanner({ setSelectedPage }) {
