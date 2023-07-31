@@ -25,35 +25,27 @@ export default function DotScrollGroup({ selectedPage, setSelectedPage }) {
 
       <AnchorLink
         className={`${
-          selectedPage === "skills" ? selectedStyles : "bg-gray-50"
+          selectedPage === "education" ? selectedStyles : "bg-gray-50"
         } w-2 h-2 rounded-full`}
-        href="#home"
-        onClick={() => setSelectedPage("skills")}
+        href="#education"
+        onClick={() => setSelectedPage("education")}
+      />
+
+      <AnchorLink
+        className={`${
+          selectedPage === "experience" ? selectedStyles : "bg-gray-50"
+        } w-2 h-2 rounded-full`}
+        href="#experience"
+        onClick={() => setSelectedPage("experience")}
       />
 
       <AnchorLink
         className={`${
           selectedPage === "contact" ? selectedStyles : "bg-gray-50"
         } w-2 h-2 rounded-full`}
-        href="#home"
+        href="#contact"
         onClick={() => setSelectedPage("contact")}
       />
-
-      {/* <AnchorLink
-        className={`${
-          selectedPage === "home" ? selectedStyles : "bg-gray-50"
-        } w-2 h-2 rounded-full`}
-        href="#home"
-        onClick={() => setSelectedPage("home")}
-      />
-
-      <AnchorLink
-        className={`${
-          selectedPage === "home" ? selectedStyles : "bg-gray-50"
-        } w-2 h-2 rounded-full`}
-        href="#home"
-        onClick={() => setSelectedPage("home")}
-      /> */}
     </div>
   );
 }

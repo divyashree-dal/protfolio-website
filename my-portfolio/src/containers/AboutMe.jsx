@@ -1,26 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function AboutMe({ setSelectedPage }) {
+function AboutMe() {
   return (
-    <section id="about" className="md:flex md:justify-center md:items-center gap-14 md:h-full py-10">
+    <section
+      id="about"
+      className="md:flex md:justify-center md:items-center gap-14 md:h-full py-10"
+    >
       {/* IMAGE SECTION */}
       <div className=" m-22 md:flex md:justify-center md:items-center ">
-      <motion.div
+        <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3}}
-          transition={{ delay:0.4, duration: 0.5}}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-        <img
-          alt="profile"
-          className="w-full max-w-[400px] shadow-lg rounded-full overflow-hidden border-2 border-[#FF45A4]"
-          src="../assets/images/1.png"
-        />
+          <img
+            alt="profile"
+            className="w-full max-w-[400px] shadow-lg rounded-full overflow-hidden border-2 border-[#FF45A4]"
+            src="../assets/images/1.png"
+          />
         </motion.div>
       </div>
       {/* ABOUT TEXT */}
@@ -29,13 +32,13 @@ function AboutMe({ setSelectedPage }) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ delay:0.4, duration: 0.6 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}
         >
-         <p className="text-6xl font-sans z-10 text-center md:text-start">
+          <p className="text-6xl font-sans z-10 text-center md:text-start">
             About {""}
             <span
               className="xs:relative xs:text-white xs:font-semibold z-20 xs:before:content-brush

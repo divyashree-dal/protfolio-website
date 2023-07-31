@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import UseMediaQuery from "../hooks/UseMediaQuery";
 
-// Seprate mobile and desktop coniditons, padding layover, DS icon
+//  DS icon
 const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
   return (
@@ -10,7 +10,7 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
       className={`${
         selectedPage === lowerCasePage ? "text-yellow-100" : ""
       } hover:text-yellow-600 transition duration-500 `}
-      href={`${lowerCasePage}`}
+      href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
       {page}
@@ -71,11 +71,20 @@ function NavBar({ scrolled, selectedPage, setSelectedPage }) {
 
                 <div>
                   <Link
-                    page="Skills"
+                    page="Education"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
+
+                <div>
+                  <Link
+                    page="Experience"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                </div>
+
                 <div>
                   <Link
                     page="Contact"
@@ -148,11 +157,19 @@ function NavBar({ scrolled, selectedPage, setSelectedPage }) {
                 </div>
                 <div>
                   <Link
-                    page="Skills"
+                    page="Education"
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
+                <div>
+                  <Link
+                    page="Experience"
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                </div>
+
                 <div>
                   <Link
                     page="Contact"

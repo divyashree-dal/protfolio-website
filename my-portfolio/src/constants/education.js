@@ -1,0 +1,30 @@
+export const education = [
+    {
+        id:"1",
+        heading:"",
+        coursework:"",
+        graduatedYear:"",
+        grade:""
+    },
+    {
+        id:"2",
+        heading:"",
+        coursework:"",
+        graduatedYear:"",
+        grade:""
+    },
+    {
+        id:"3",
+        heading:"",
+        coursework:"",
+        graduatedYear:"",
+        grade:""
+    },
+    {
+        id:"4",
+        heading:"",
+        coursework:"",
+        graduatedYear:"",
+        grade:""
+    }
+]

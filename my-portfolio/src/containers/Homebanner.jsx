@@ -78,7 +78,7 @@ function Homebanner({ setSelectedPage }) {
           >
             <AnchorLink
               className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
-              hover:bg-blue-400 hover:text-white transition duration-500"
+              :bg-blue-400hover hover:text-white transition duration-500"
               onClick={() => setSelectedPage("contact")}
               href="#contact"
             >

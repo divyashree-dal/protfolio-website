@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       colors: {
         "deep-blue": "#010026",
+        pink: "#FF45A4",
+        tertiary: "#151030",
       },
       backgroundImage: (theme) => ({
         "gradient-rainbow":
