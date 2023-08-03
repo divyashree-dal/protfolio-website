@@ -5,18 +5,33 @@ import { education } from "../constants/education";
 
 const EducationCard = ({ education }) => {
   return (
-    <div className="timeline-item">
-      <h3>{education.heading}</h3>
-      <p>{education.coursework}</p>
-      <p>{education.graduatedYear}</p>
-      <p>{education.grade}</p>
+    <div className="timeline-item bg-[#332f4a] rounded-lg shadow-md flex p-6 hover:bg-[#3b3756]">
+      <div className="flex-none mr-4">
+        <img
+          className="w-8 h-8"
+          src={education.universityIcon}
+          alt="University Icon"
+        />
+      </div>
+      <div className="flex-grow">
+        <h3 className="text-2xl font-semibold mb-3 text-">
+          {education.heading}
+        </h3>
+        <div className="flex flex-col sm:justify-between sm:flex-row">
+          <p className="text-lg">{education.university}</p>
+          <p className="text-lg italic">{education.graduatedYear}</p>
+        </div>
+        <p className="text-lg">{education.coursework}</p>
+
+        <p className="text-lg">{education.grade}</p>
+      </div>
     </div>
   );
 };
 
 function Education() {
   return (
-    <section id="education" className="p-10">
+    <section id="education" className="p-5">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -37,7 +52,18 @@ function Education() {
 
       <div className="timeline-container">
         {education.map((education, index) => (
-          <EducationCard key={`education-${index}`} education={education} />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ type: "spring", duration: 1.25, delay: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: { y: 0, opacity: 1 },
+            }}
+          >
+            <EducationCard key={`education-${index}`} education={education} />
+          </motion.div>
         ))}
       </div>
     </section>
