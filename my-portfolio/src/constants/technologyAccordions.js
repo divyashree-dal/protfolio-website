@@ -44,6 +44,11 @@ export const accordions = [
         name: "ReactJS",
         icon: "../assets/technologies/reactjs.png",
       },
+      {
+        id: "8",
+        name: "ExpressJS",
+        icon: "../assets/technologies/express.png",
+      },
     ],
   },
 
@@ -62,6 +67,11 @@ export const accordions = [
         name: "Java",
         icon: "../assets/technologies/java.png",
       },
+      {
+        id: "3",
+        name: "JavaScript",
+        icon: "../assets/technologies/javascript.png",
+      },
     ],
   },
 
@@ -72,13 +82,23 @@ export const accordions = [
     devStack: [
       {
         id: "1",
+        name: "SQL",
+        icon: "../assets/technologies/sql.png",
+      },
+      {
+        id: "2",
         name: "MongoDb",
         icon: "../assets/technologies/mongodb.png",
       },
       {
-        id: "2",
+        id: "3",
         name: "MySql",
         icon: "../assets/technologies/mysql.png",
+      },
+      {
+        id: "4",
+        name: "Firebase",
+        icon: "../assets/technologies/firebase.png",
       },
     ],
   },
@@ -138,6 +158,40 @@ export const accordions = [
         id: "4",
         name: "Mockito",
         icon: "../assets/technologies/mockito.png",
+      },
+    ],
+  },
+  {
+    id: "6",
+    accordionId: "accordion6",
+    typoName: "Cloud technologies",
+    devStack: [
+      {
+        id: "1",
+        name: "AWS Services",
+        icon: "../assets/technologies/aws.png",
+      },
+      {
+        id: "2",
+        name: "Google Cloud Platform",
+        icon: "../assets/technologies/gcp.png",
+      },
+    ],
+  },
+  {
+    id: "7",
+    accordionId: "accordion7",
+    typoName: "Programming Softwares",
+    devStack: [
+      {
+        id: "1",
+        name: "Intellij",
+        icon: "../assets/technologies/intellij.png",
+      },
+      {
+        id: "2",
+        name: "Visual Studio Code",
+        icon: "../assets/technologies/vscode.png",
       },
     ],
   },

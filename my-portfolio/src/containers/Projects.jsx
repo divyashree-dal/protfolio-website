@@ -2,19 +2,25 @@ import React from "react";
 import { projects } from "../constants/projects";
 import "../styles/projects.css";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import UseMediaQuery from "../hooks/UseMediaQuery";
+
 function Projects() {
+  const isAboveSmallScreens = UseMediaQuery("(min-width: 768px)");
+
   const ProjectCard = ({ project }) => {
     return (
-      <div className="project-box relative overflow-hidden cursor-pointer flex">
+      <div className="project-box relative overflow-hidden cursor-pointer flex h-60 w-50 md:h-80 md:w-80 rounded-lg ">
         <img
           src={project.icon}
           alt={project.alt}
-          className="w-full h-auto transition-transform duration-300 ease-in-out"
+          className="sm:object-cover h-auto transition-transform duration-300 ease-in-out w-full"
         />
         <div className="project-layer">
-          <h4 className="text-3xl">{project.title}</h4>
-          <p className="text-base my-1 mx-0.3">{project.description}</p>
-          <a href={project.github}>
+          <h4 className="text-xl mb-3 italic">{project.title}</h4>
+          {isAboveSmallScreens && (
+            <p className="text-sm my-1 mx-0.3">{project.description}</p>
+          )}
+          <a href={project.github} target="_blank" rel="noreferrer">
             <HiOutlineExternalLink className="w-10 h-10" />
           </a>
         </div>

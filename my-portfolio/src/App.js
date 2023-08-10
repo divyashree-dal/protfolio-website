@@ -11,6 +11,7 @@ import Experience from "./containers/Experience";
 import Technologies from "./containers/Technologies";
 import Contact from "./containers/Contact";
 import Projects from "./containers/Projects";
+import Footer from "./containers/Footer";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -57,78 +58,87 @@ function App() {
           >
             <Homebanner setSelectedPage={setSelectedPage}> </Homebanner>
           </motion.div>
+        </div>
+        <SectionLine />
 
-          <SectionLine />
+        <div className="mx-auto p-4 max-w-screen-lg  ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("about")}
+          >
+            <AboutMe />
+          </motion.div>
+        </div>
 
-          <div className="w-5/6 mx-auto md:h-full ">
-            <motion.div
-              margin="0 0 -200px 0"
-              amount="all"
-              onViewportEnter={() => setSelectedPage("about")}
-            >
-              <AboutMe />
-            </motion.div>
-          </div>
+        <SectionLine />
 
-          <SectionLine />
+        <div className="mx-auto p-4 max-w-screen-lg">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("education")}
+          >
+            <Education />
+          </motion.div>
+        </div>
 
-          <div className="mx-auto p-4 max-w-screen-lg">
-            <motion.div
-              margin="0 0 -200px 0"
-              amount="all"
-              onViewportEnter={() => setSelectedPage("education")}
-            >
-              <Education />
-            </motion.div>
-          </div>
+        <SectionLine />
 
-          <SectionLine />
+        <div className="mx-auto p-4 max-w-screen-lg ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("experience")}
+          >
+            <Experience />
+          </motion.div>
+        </div>
 
-          <div className="mx-auto p-4 max-w-screen-lg ">
-            <motion.div
-              margin="0 0 -200px 0"
-              amount="all"
-              onViewportEnter={() => setSelectedPage("experience")}
-            >
-              <Experience />
-            </motion.div>
-          </div>
+        <SectionLine />
 
-          <SectionLine />
+        <div className="mx-auto p-4 max-w-screen-lg ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("technologies")}
+          >
+            <Technologies />
+          </motion.div>
+        </div>
 
-          <div className="mx-auto p-4 max-w-screen-lg ">
-            <motion.div
-              margin="0 0 -200px 0"
-              amount="all"
-              onViewportEnter={() => setSelectedPage("technologies")}
-            >
-              <Technologies />
-            </motion.div>
-          </div>
+        <SectionLine />
 
-          <SectionLine />
+        <div className="mx-auto p-4 max-w-screen-lg  ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("projects")}
+          >
+            <Projects />
+          </motion.div>
+        </div>
 
-          <div className="mx-auto p-4 max-w-screen-lg  ">
-            <motion.div
-              margin="0 0 -200px 0"
-              amount="all"
-              onViewportEnter={() => setSelectedPage("projects")}
-            >
-              <Projects />
-            </motion.div>
-          </div>
+        <SectionLine />
 
-          <SectionLine />
+        <div className="mx-auto p-4 max-w-screen-lg   ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("contact")}
+          >
+            <Contact />
+          </motion.div>
+        </div>
 
-          <div className=" w-5/6 mx-auto md:h-full ">
-            <motion.div
-              margin="0 0 -200px 0"
-              amount="all"
-              onViewportEnter={() => setSelectedPage("contact")}
-            >
-              <Contact />
-            </motion.div>
-          </div>
+        <div className=" mx-auto max-w-screen-lg ">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("footer")}
+          >
+            <Footer />
+          </motion.div>
         </div>
       </div>
     </>
