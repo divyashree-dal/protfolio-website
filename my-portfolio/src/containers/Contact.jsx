@@ -59,8 +59,11 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="relative flex bg-deep-blue max-w-screen mx-auto grid-flow-col justify-evenly">
-    <motion.div
+    <section
+      id="contact"
+      className="relative flex bg-deep-blue max-w-screen mx-auto grid-flow-col justify-evenly"
+    >
+      <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
         className="sm:col-span-2 flex flex-col p-5 sm:m-9 sm:p-12 z-20 lg:z-0"
       >
@@ -112,19 +115,21 @@ function Contact() {
             type="submit"
             className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:bg-[#FF45A4]"
           >
-              {loading ? "Sending..." : "Send"}
+            {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>
 
       <motion.div
-       variants={slideIn("right", "tween", 0.2, 1)}
-        className='absolute -z-1 mt-[50%] h-[100%] w-[100%] left-10 md:-right-1 lg:top-20 lg:mt-32 lg:relative flex justify-center items-center'
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className="absolute -z-1 mt-[30%] h-[100%] w-[100%] left-10 md:-right-1 lg:top-20 lg:mt-32 lg:relative flex justify-center items-center"
       >
-        <img src="../assets/images/earth.gif" alt="linkedin icon" 
-        className="h-[100%] w-[100%] " />
+        <img
+          src="../assets/images/earth.gif"
+          alt="Earth revolving icon"
+          className="h-[80%] w-[100%] "
+        />
       </motion.div>
-
     </section>
   );
 }

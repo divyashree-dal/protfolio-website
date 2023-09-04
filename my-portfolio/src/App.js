@@ -119,19 +119,18 @@ function App() {
           </motion.div>
         </div>
 
-        <SectionLine />
-
-        <div className="mx-auto p-4 max-w-screen-lg   ">
+        <div className="mx-auto p-4 max-w-screen-lg ">
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
             onViewportEnter={() => setSelectedPage("contact")}
           >
+            <SectionLine />
             <Contact />
           </motion.div>
         </div>
 
-        <div className=" mx-auto max-w-screen-lg ">
+        <div className=" mx-auto  p-5 max-w-screen-lg ">
           <motion.div
             margin="0 0 -200px 0"
             amount="all"

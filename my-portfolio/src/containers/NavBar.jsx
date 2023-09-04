@@ -115,9 +115,13 @@ function NavBar({ scrolled, selectedPage, setSelectedPage }) {
             <div
               className={`${
                 scrolled ? "" : "bg-[#FF45A4]"
-              } border-b p-8 font-semibold`}
+              } border-b p-4 font-semibold`}
             >
-              DS
+              <img
+                src="../assets/images/DSlogo3.png"
+                alt=""
+                className="h-8 w-12 "
+              />
             </div>
           </div>
         ) : (
