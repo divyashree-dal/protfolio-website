@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { slideIn } from "../commoncomponents/Motions";
+import { slideIn } from '../commoncomponents/motions';
 
 function Contact() {
   const [loading, setLoading] = useState(false);
