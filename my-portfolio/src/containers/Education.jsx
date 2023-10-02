@@ -23,7 +23,7 @@ const EducationCard = ({ education }) => {
         </div>
         <p className="text-lg">{education.coursework}</p>
 
-        <p className="text-lg">{education.grade}</p>
+        <p className="text-lg font-semibold">{education.grade}</p>
       </div>
     </div>
   );

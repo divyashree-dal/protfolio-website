@@ -44,7 +44,7 @@ function App() {
           setSelectedPage={setSelectedPage}
         />
 
-        <div className="w-5/6 mx-auto md:h-full">
+      <div className=" w-5/6 mx-auto md:h-full">
           {isAboveMediumScreens && (
             <DotScrollGroup
               selectedPage={selectedPage}
@@ -59,43 +59,37 @@ function App() {
             <Homebanner setSelectedPage={setSelectedPage}> </Homebanner>
           </motion.div>
         </div>
-        <SectionLine />
 
-        <div className="mx-auto p-4 max-w-screen-lg  ">
+        <div className="mx-auto p-4 max-w-screen-lg">
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
             onViewportEnter={() => setSelectedPage("about")}
           >
+            <SectionLine />
             <AboutMe />
           </motion.div>
         </div>
-
-        <SectionLine />
-
         <div className="mx-auto p-4 max-w-screen-lg">
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
             onViewportEnter={() => setSelectedPage("education")}
           >
+            <SectionLine />
             <Education />
           </motion.div>
         </div>
-
-        <SectionLine />
-
         <div className="mx-auto p-4 max-w-screen-lg ">
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
             onViewportEnter={() => setSelectedPage("experience")}
           >
+            <SectionLine />
             <Experience />
           </motion.div>
         </div>
-
-        <SectionLine />
 
         <div className="mx-auto p-4 max-w-screen-lg ">
           <motion.div
@@ -103,11 +97,11 @@ function App() {
             amount="all"
             onViewportEnter={() => setSelectedPage("technologies")}
           >
+            <SectionLine />
             <Technologies />
           </motion.div>
         </div>
 
-        <SectionLine />
 
         <div className="mx-auto p-4 max-w-screen-lg  ">
           <motion.div
@@ -115,6 +109,7 @@ function App() {
             amount="all"
             onViewportEnter={() => setSelectedPage("projects")}
           >
+            <SectionLine />
             <Projects />
           </motion.div>
         </div>
@@ -130,15 +125,19 @@ function App() {
           </motion.div>
         </div>
 
+        
+      
         <div className=" mx-auto  p-5 max-w-screen-lg ">
           <motion.div
             margin="0 0 -200px 0"
             amount="all"
             onViewportEnter={() => setSelectedPage("footer")}
           >
+             <SectionLine />
             <Footer />
           </motion.div>
         </div>
+        
       </div>
     </>
   );

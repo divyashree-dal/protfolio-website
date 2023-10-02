@@ -5,10 +5,10 @@ function AboutMe() {
   return (
     <section
       id="about"
-      className="md:flex md:justify-center md:items-center gap-14 md:h-full py-2"
+      className=" mt-10 md:flex md:justify-center md:items-center gap-14 md:h-full py-2"
     >
       {/* IMAGE SECTION */}
-      <div className=" m-22 md:flex md:justify-center md:items-center ">
+      <div className=" m-22 flex justify-center items-center w-5/6 ">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -21,13 +21,13 @@ function AboutMe() {
         >
           <img
             alt="profile"
-            className="w-full max-w-[400px] shadow-lg rounded-full overflow-hidden border-2 border-[#FF45A4]"
-            src="../assets/images/1.png"
+            className="w-full max-w-[400px] shadow-lg rounded-full overflow-hidden border-2 border-[#FF45A4] ml-8"
+            src="../assets/images/hello.jpeg"
           />
         </motion.div>
       </div>
       {/* ABOUT TEXT */}
-      <div className="h-full w-[400px] mt-16 md:mt-25 object-cover">
+      <div className="h-full mt-16 md:mt-25 object-cover">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -38,7 +38,7 @@ function AboutMe() {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-6xl font-sans z-10 text-center md:text-start">
+          <p className="text-6xl font-sans z-10 text-center md:text-start p-5">
             About {""}
             <span
               className="xs:relative xs:text-white xs:font-semibold z-20 xs:before:content-brush
@@ -47,15 +47,15 @@ function AboutMe() {
               Me
             </span>
           </p>
-          <p className="mt-10 mb-7 text-4xl font-sans font-semibold text-center md:text-start italic">
+          <p className="mt-10 mb-7 text-4xl font-sans font-semibold text-center md:text-start italic p-5">
             Full Stack Developer
           </p>
-          <p className="mt-10 mb-5 text-sm text-center md:text-left italic">
+          <p className="mt-10 mb-5 text-sm text-center md:text-left italic p-5">
             "Success is not the key to happiness. Happiness is the key to
             success. If you love what you are doing, you will be successful." -
             Albert Schweitzer
           </p>
-          <p className=" mb-5 text-sm text-center md:text-left">
+          <p className="lg:mt-5 lg:mb-5 text-sm sm:text-center md:text-left text-justify p-5">
             Hello there! I'm a passionate and driven full stack developer with
             an insatiable thirst for all things tech. My journey in the world of
             programming began with a spark of curiosity that has now evolved
@@ -64,12 +64,12 @@ function AboutMe() {
             of technology, always on the lookout for new challenges to embrace.
           </p>
 
-          <p className="mt-5  mb-5 text-sm text-center md:text-left">
+          <p className="lg:mt-5  lg:mb-5 text-sm sm:text-center md:text-left text-justify p-5">
             With a focus on full stack development, I specialize in crafting
             exceptional user experiences using the power of React, Redux, and
             Nodejs.
           </p>
-          <p className="mt-5  mb-5 text-sm text-center md:text-left">
+          <p className="lg:mt-5  lg:mb-5 text-sm sm:text-center md:text-left text-justify p-5">
             Thank you for taking the time to explore my portfolio. I hope that
             my work reflects the dedication, creativity, and enthusiasm that
             define my journey as a full stack developer. Let's connect and
@@ -77,7 +77,12 @@ function AboutMe() {
           </p>
         </motion.div>
       </div>
+
+
     </section>
+
+
+
   );
 }
 

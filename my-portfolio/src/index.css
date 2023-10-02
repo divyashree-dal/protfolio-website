@@ -7,8 +7,9 @@ body,
 #root,
 .app {
   height: 100%;
+  max-width: 100%;
   background-color: #010026;
-  @apply text-white;
+  @apply text-[#E6E6FA];
 }
 
 @layer utilities {

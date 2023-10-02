@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import ScrollTop from "../commoncomponents/ScrollTop";
 
 export default function DotScrollGroup({ selectedPage, setSelectedPage }) {
   const selectedStyles = `relative bg-yellow-200 before:absolute before:w-4 before:h-4 before:rounded-full
@@ -46,6 +47,10 @@ export default function DotScrollGroup({ selectedPage, setSelectedPage }) {
         href="#contact"
         onClick={() => setSelectedPage("contact")}
       />
+      <div>
+      <ScrollTop />
+      </div>
     </div>
+    
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { slideIn } from "../commoncomponents/motions";
+import { slideIn } from "../commoncomponents/Motions";
+
 function Contact() {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -65,7 +66,7 @@ function Contact() {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="sm:col-span-2 flex flex-col p-5 sm:m-9 sm:p-12 z-20 lg:z-0"
+        className="flex flex-col"
       >
         {" "}
         <p className="sm:text-[18px] text-[10px] text-gray-300 uppercase tracking-wide mt-10">
@@ -74,7 +75,7 @@ function Contact() {
         <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           Contact.
         </h2>
-        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
+        <form onSubmit={handleSubmit} className=" grid grid-rows-2 mt-12  gap-8  sm:m-9 sm:p-12 z-20 lg:z-0 ">
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
@@ -107,7 +108,7 @@ function Contact() {
               value={form.message}
               onChange={handleChange}
               placeholder="What you want to say?"
-              className="bg-tertiary py-4 px-8 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-4 sm:px-28 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
 
@@ -122,12 +123,12 @@ function Contact() {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="absolute -z-1 mt-[30%] h-[100%] w-[100%] left-10 md:-right-1 lg:top-20 lg:mt-32 lg:relative flex justify-center items-center"
+        className="absolute -z-1 mt-[20%] h-[100%] w-[100%] md:-right-1 lg:top-20 lg:mt-32 lg:relative flex justify-center items-center"
       >
         <img
           src="../assets/images/earth.gif"
           alt="Earth revolving icon"
-          className="h-[80%] w-[100%] "
+          className="h-[80%] w-[80%] mt-14"
         />
       </motion.div>
     </section>
