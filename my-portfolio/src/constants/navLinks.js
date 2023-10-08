@@ -9,15 +9,15 @@ export const navLinks = [
   },
   {
     id: "3",
-    page: "Education",
-  },
-  {
-    id: "4",
     page: "Experience",
   },
   {
+    id: "4",
+    page: "Education",
+  },
+  {
     id: "5",
-    page: "Skills",
+    page: "Technologies",
   },
   {
     id: "6",

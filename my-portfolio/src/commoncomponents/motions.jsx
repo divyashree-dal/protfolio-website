@@ -17,3 +17,4 @@ export const slideIn = (direction, type, delay, duration) => {
       },
     };
   };
+

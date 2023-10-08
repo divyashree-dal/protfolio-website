@@ -21,8 +21,8 @@ function AboutMe() {
         >
           <img
             alt="profile"
-            className="w-full max-w-[400px] shadow-lg rounded-full overflow-hidden border-2 border-[#FF45A4] ml-8"
-            src="../assets/images/hello.jpeg"
+            className="w-full max-w-[400px] shadow-lg rounded-full overflow-hidden border-2 border-pink ml-8"
+            src="../assets/images/about-me.jpeg"
           />
         </motion.div>
       </div>

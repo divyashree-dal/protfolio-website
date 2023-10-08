@@ -70,16 +70,6 @@ function App() {
             <AboutMe />
           </motion.div>
         </div>
-        <div className="mx-auto p-4 max-w-screen-lg">
-          <motion.div
-            margin="0 0 -200px 0"
-            amount="all"
-            onViewportEnter={() => setSelectedPage("education")}
-          >
-            <SectionLine />
-            <Education />
-          </motion.div>
-        </div>
         <div className="mx-auto p-4 max-w-screen-lg ">
           <motion.div
             margin="0 0 -200px 0"
@@ -88,6 +78,16 @@ function App() {
           >
             <SectionLine />
             <Experience />
+          </motion.div>
+        </div>
+        <div className="mx-auto p-4 max-w-screen-lg">
+          <motion.div
+            margin="0 0 -200px 0"
+            amount="all"
+            onViewportEnter={() => setSelectedPage("education")}
+          >
+            <SectionLine />
+            <Education />
           </motion.div>
         </div>
 

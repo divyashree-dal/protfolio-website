@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { slideIn } from '../commoncomponents/motions';
+import { slideIn } from "../commoncomponents/motions";
+import UseMediaQuery from "../hooks/UseMediaQuery";
 
 function Contact() {
+  const isAboveSmallScreens = UseMediaQuery("(min-width: 820px)");
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -75,7 +77,10 @@ function Contact() {
         <h2 className="text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
           Contact.
         </h2>
-        <form onSubmit={handleSubmit} className=" grid grid-rows-2 mt-12  gap-8  sm:m-9 sm:p-12 z-20 lg:z-0 ">
+        <form
+          onSubmit={handleSubmit}
+          className=" grid grid-rows-2 mt-12  gap-8  sm:m-9 sm:p-12 z-20 lg:z-0 "
+        >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
@@ -114,23 +119,25 @@ function Contact() {
 
           <button
             type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:bg-[#FF45A4]"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md hover:bg-[pink]"
           >
             {loading ? "Sending..." : "Send"}
           </button>
         </form>
       </motion.div>
 
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="absolute -z-1 mt-[20%] h-[100%] w-[100%] md:-right-1 lg:top-20 lg:mt-32 lg:relative flex justify-center items-center"
-      >
-        <img
-          src="../assets/images/earth.gif"
-          alt="Earth revolving icon"
-          className="h-[80%] w-[80%] mt-14"
-        />
-      </motion.div>
+      {isAboveSmallScreens && (
+        <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className="absolute -z-1 mt-[20%] h-[100%] w-[100%] md:-right-1 lg:top-20 lg:mt-32 lg:relative flex justify-center items-center"
+        >
+          <img
+            src="../assets/images/earth.gif"
+            alt="Earth revolving icon"
+            className="h-[80%] w-[80%] mt-14 md:mt-8"
+          />
+        </motion.div>
+      )}
     </section>
   );
 }

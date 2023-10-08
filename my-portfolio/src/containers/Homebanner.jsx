@@ -3,16 +3,16 @@ import UseMediaQuery from "../hooks/UseMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 import SocialMediaIIcons from "../commoncomponents/SocialMediaIIcons";
-
+import { Tooltip } from "@mui/material";
 
 function Homebanner({ setSelectedPage }) {
   const isAboveMediumScreens = UseMediaQuery("(min-width:1060px)");
 
   const handleDownload = () => {
-    const fileUrl = '../assets/files/Divyashree Bangalore Subbaraya Resume.pdf'; 
-    const link = document.createElement('a');
+    const fileUrl = "../assets/files/Divyashree Bangalore Subbaraya Resume.pdf";
+    const link = document.createElement("a");
     link.href = process.env.PUBLIC_URL + fileUrl;
-    link.download = 'DivyashreeResume.pdf'; 
+    link.download = "DivyashreeResume.pdf";
     link.click();
   };
 
@@ -76,24 +76,28 @@ function Homebanner({ setSelectedPage }) {
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <AnchorLink
+              <AnchorLink
               className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold
               :bg-blue-400hover hover:text-white transition duration-500"
               onClick={() => setSelectedPage("contact")}
               href="#contact"
             >
               Contact Me
-            </AnchorLink>
+            </AnchorLink>          
 
-            <button
-              className="bg-gradient-rainblue rounded-sm py-0.5 pr-0.5 font-semibold "
-              onClick={handleDownload}
-
+            <Tooltip
+              title="Click here to download my professional resume in PDF format"
+              placement="bottom"
             >
-              <div className="bg-deep-blue hover:text-red-600 transition duration-500 w-full h-full flex items-center justify-center px-10">
-                Download Resume
-              </div>
-            </button>
+              <button
+                className="bg-gradient-rainblue rounded-sm py-0.5 pr-0.5 font-semibold "
+                onClick={handleDownload}
+              >
+                <div className="bg-deep-blue hover:text-red-600 transition duration-500 w-full h-full flex items-center justify-center px-10">
+                  Download Resume
+                </div>
+              </button>
+            </Tooltip>
           </motion.div>
 
           <motion.div

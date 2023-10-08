@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import UseMediaQuery from "../hooks/UseMediaQuery";
 import { navLinks } from "../constants/navLinks";
+import { motion } from "framer-motion";
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
@@ -19,9 +20,10 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
 };
 
 function NavBar({ scrolled, selectedPage, setSelectedPage }) {
-  const isAboveSmallScreens = UseMediaQuery("(min-width: 768px)");
+  const isAboveSmallScreens = UseMediaQuery("(min-width: 820px)");
   const [isMenuToggled, setIsMenuToggled] = useState(false);
-  const navbarBackground = scrolled ? "" : "bg-[#FF45A4]";
+  const genericHamburgerLine = `h-1 w-6 my-1 rounded-full transition ease transform duration-300 `;
+  const navbarBackground = scrolled ? "" : "bg-pink";
 
   return (
     <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-4`}>
@@ -44,34 +46,68 @@ function NavBar({ scrolled, selectedPage, setSelectedPage }) {
             ))}
           </div>
         ) : (
-          <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-            <img src="../assets/images/menu-icon.svg" alt="menu icon" />
-          </button>
+          <>
+            <button
+              className="absolute right-10"
+              onClick={() => setIsMenuToggled(!isMenuToggled)}
+            >
+              <div
+                className={`${genericHamburgerLine} ${
+                  isMenuToggled
+                    ? "rotate-45 translate-y-1 group-hover:opacity-100 bg-deep-blue z-10"
+                    : " group-hover:opacity-100 bg-white"
+                }`}
+              />
+              <div
+                className={`${genericHamburgerLine} ${
+                  isMenuToggled
+                    ? "-rotate-45 -translate-y-1 group-hover:opacity-100 bg-deep-blue z-10"
+                    : "group-hover:opacity-100 bg-white"
+                }`}
+              />
+              <div
+                className={`${genericHamburgerLine} ${
+                  isMenuToggled
+                    ? "opacity-0"
+                    : "group-hover:opacity-100 bg-white"
+                }`}
+              />
+            </button>
+          </>
         )}
 
         {/* Mobile Menu*/}
-        {!isAboveSmallScreens && isMenuToggled && (
-          <div className="fixed right-0 top-0 bg-[#E6E6FA] w-[50%] pb-5">
-            <div className="flex justify-end right-0">
-              <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                <img src="../assets/images/close-icon.svg" alt="close icon" />
-              </button>
-            </div>
 
-            <div className="flex flex-col gap-10 items-center justify-center text-2xl text-deep-blue">
-              {navLinks.map((navlink) => (
-                <Link
-                  page={navlink.page}
-                  selectedPage={selectedPage}
-                  setSelectedPage={setSelectedPage}
-                />
-              ))}
-            </div>
+        {!isAboveSmallScreens && isMenuToggled && (
+           
+          <div className="absolute right-0 top-0 bg-[#E6E6FA] w-[60%] pb-5 -z-10 rounded-tl-2xl rounded-bl-2xl">
+            <motion.div
+           initial={{ x: "100%" }}
+           animate={{ x: 0 }}
+           exit={{ x: "100%" }}
+           transition={{ type: "spring", stiffness: 120, damping: 10 }}
+         >
+            <div className="flex justify-center right-0 p-5"></div>
+              <div className=" flex flex-col gap-5 items-center justify-center text-xl text-deep-blue">
+                {navLinks.map((navlink) => (
+                  <Link
+                    page={navlink.page}
+                    selectedPage={selectedPage}
+                    setSelectedPage={setSelectedPage}
+                  />
+                ))}
+              </div>
+              </motion.div>
           </div>
+        
         )}
       </div>
     </nav>
   );
+
+  /**
+   *
+   */
 }
 
 export default NavBar;
