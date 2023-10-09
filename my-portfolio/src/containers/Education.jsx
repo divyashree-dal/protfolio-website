@@ -53,6 +53,7 @@ function Education() {
       <div className="timeline-container">
         {education.map((education, index) => (
           <motion.div
+            key={`education-${index}`}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}

@@ -28,6 +28,7 @@ const AccordionsCard = ({ techAccordion }) => {
       } `}
     >
       <motion.div
+        key={techAccordion.id}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -40,7 +41,11 @@ const AccordionsCard = ({ techAccordion }) => {
         <Accordion
           expanded={expandedAccordion === techAccordion.accordionId}
           onChange={() => handleAccordionToggle(techAccordion.accordionId)}
-          style={{ backgroundColor: "#332f4a", borderRadius: "2%", marginBottom:"25px" }}
+          style={{
+            backgroundColor: "#332f4a",
+            borderRadius: "2%",
+            marginBottom: "25px",
+          }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon style={{ color: "white" }} />}
@@ -51,10 +56,16 @@ const AccordionsCard = ({ techAccordion }) => {
               {techAccordion.typoName}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails className="bg-deep-blue">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-14">
-              {techAccordion.devStack.map((tech) => (
-                <div className=" w-16 h-16 rounded-full mx-auto relative ">
+          <AccordionDetails
+            className="bg-deep-blue"
+            key={techAccordion.devStack.id}
+          >
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 gap-y-20">
+              {techAccordion.devStack.map((tech, index) => (
+                <div
+                  className=" w-16 h-16 rounded-full mx-auto relative"
+                  key={`details-${index}`}
+                >
                   <img
                     key={tech.id}
                     className="w-full h-full object-contain animate-spin-slow"
@@ -82,7 +93,7 @@ function Technologies() {
         Technologies.
       </h2>
 
-      <div className="flex flex-col justify-center items-center space-y-10 mt-10 mb-14">
+      <div className="flex flex-col justify-center items-center space-y-10 mt-10 mb-16">
         {accordions.map((techAccordion, index) => (
           <AccordionsCard
             key={`techAccordion-${index}`}

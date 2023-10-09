@@ -9,7 +9,11 @@ function Projects() {
 
   const ProjectCard = ({ project }) => {
     return (
-      <div className="project-box relative overflow-hidden cursor-pointer flex h-60 w-50 md:h-80 md:w-80 rounded-lg ">
+      <div className="project-box relative overflow-hidden cursor-pointer flex h-60 w-50 md:h-80 md:w-80 rounded-lg">
+        {/* <div className="absolute  bg-black z-10 h-[100%] w-[100%] opacity-70 ">
+         
+        </div> */}
+        {/* <div className="absolute text-xl italic w-[100%] text-white z-20 top-1/2 left-1/2 transform -translate-x-[43%] -translate-y-1/2">{project.title}</div> */}
         <img
           src={project.icon}
           alt={project.alt}
